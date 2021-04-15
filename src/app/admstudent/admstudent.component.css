@@ -1,16 +1,17 @@
 table 
 {
-    padding: 5%px;
+    margin-top: 1%;
+    padding: 5px;
     align-items: center;
     width: 98%;
-    background-color:blanchedalmond;
+    background-color: blanchedalmond;
     margin-left: 5px;
 }
 .card
 {
-    padding: 15px;
+   padding: 15px;
 }
 #tabledata
 {
-    text-align: center;
+   text-align: center;
 }

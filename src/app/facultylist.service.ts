@@ -9,6 +9,6 @@ export class FacultylistService {
   constructor(private http:HttpClient) { }
   getFaculty()
   {
-    this.http.get('http://localhost:3000/admin/faculty');
+   return this.http.get('http://localhost:3000/admin/faculty');
   }
 }

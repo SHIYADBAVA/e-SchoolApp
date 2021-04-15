@@ -12,15 +12,16 @@ export class AdmaddstdComponent implements OnInit {
 
   constructor(private _router:Router, private admStudentService:AdmstudentService) { }
   // New Student Object
-  // Student={
-  //   name:"",
-  //   classname:"",
-  //   username:"",
-  //   email:"",
-  //   regno:"",
-  //   password:""
-  // }
-  studentItem=new StudentModel( null, null, null, null, null, null);
+  student={
+    name:"",
+    classname:"",
+    username:"",
+    email:"",
+    regno:"",
+    password:""
+  }
+
+  studentItem=new StudentModel( this.student.name, this.student.classname, this.student.username, this.student.email, this.student.regno, this.student.password);
   ngOnInit(): void {
   }
   // New Student Adding Function

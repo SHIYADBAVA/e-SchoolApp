@@ -1,7 +1,17 @@
-.full-width-table {
-  width: 100%;
-}
-.example-spacer 
+table 
 {
-    flex: 1 1 auto;
+    margin-top: 1%;
+    padding: 5px;
+    align-items: center;
+    width: 98%;
+    background-color: blanchedalmond;
+    margin-left: 5px;
+}
+.card
+{
+   padding: 15px;
+}
+#tabledata
+{
+   text-align: center;
 }

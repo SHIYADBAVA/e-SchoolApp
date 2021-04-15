@@ -10,7 +10,6 @@ import { AdmstudentComponent } from './admstudent/admstudent.component';
 import { FacultyComponent } from './faculty/faculty.component';
 import { FacultydashComponent } from './facultydash/facultydash.component';
 import { FacultyloginComponent } from './facultylogin/facultylogin.component';
-import { FtyclassComponent } from './ftyclass/ftyclass.component';
 import { FtycourseComponent } from './ftycourse/ftycourse.component';
 import { StdassignmentComponent } from './stdassignment/stdassignment.component';
 import { StdattendanceComponent } from './stdattendance/stdattendance.component';
@@ -23,6 +22,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { FtystudentComponent } from './ftystudent/ftystudent.component';
 import { AdmaddstdComponent } from './admaddstd/admaddstd.component';
 import { AdmaddftyComponent } from './admaddfty/admaddfty.component';
+import { FtyaddttComponent } from './ftyaddtt/ftyaddtt.component';
 
 const routes: Routes = [
   {
@@ -88,6 +88,10 @@ const routes: Routes = [
       {
         path:'timetable',
         component:FtycourseComponent
+      },
+      {
+        path:'addtimetable',
+        component:FtyaddttComponent
       },
       {
         path:'student',

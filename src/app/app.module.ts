@@ -54,6 +54,8 @@ import { AdmstudentService } from './admstudent.service';
 import { FacultylistService } from './facultylist.service';
 import { AuthService } from './auth.service';
 import { FtystudentService } from './ftystudent.service';
+import { FtyaddttComponent } from './ftyaddtt/ftyaddtt.component';
+import { FtynewttService } from './ftynewtt.service';
 
 
 
@@ -86,7 +88,8 @@ import { FtystudentService } from './ftystudent.service';
     FtystudentComponent,
     AdmaddComponent,
     AdmaddstdComponent,
-    AdmaddftyComponent
+    AdmaddftyComponent,
+    FtyaddttComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +116,7 @@ import { FtystudentService } from './ftystudent.service';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [AdmstudentService, FacultylistService, AuthService, FtystudentService],
+  providers: [AdmstudentService, FacultylistService, AuthService, FtystudentService, FtynewttService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

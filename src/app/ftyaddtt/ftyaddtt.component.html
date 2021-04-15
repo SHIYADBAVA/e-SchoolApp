@@ -1,0 +1,130 @@
+<div class="grid-container">
+    <mat-card class="dashbord-card">
+        <div class="card-header mat-elevation-z8">
+            <span><mat-toolbar class="mat-h1" color="basic"><h1>Add New Timetable</h1></mat-toolbar></span>
+        </div>
+        <form class="form" #ttForm="ngForm" (ngSubmit)="AddTimetable()">
+        <div class="card-body mat-elevation-z8">
+            <div class="table-responsive">
+                <table class="table" >
+
+                    <tbody>
+                        <tr class="form-group">
+                            <td> <label>ClassName</label></td>
+                            <td><input type="text" class="form-control" name="classname" [(ngModel)]="timetableItem.classname" required></td>
+                        </tr>
+                        <label for="">Monday:</label>
+                        <br>
+                        <tr class="form-group">
+
+                            <td> <label>Period1</label></td>
+                            <td><input type="text" class="form-control" name="mperiod1" [(ngModel)]="timetableItem.mperiod1" required></td>
+                            <br>
+
+                            <td> <label>Period2</label></td>
+                            <td><input type="text" class="form-control"  name="mperiod2" [(ngModel)]="timetableItem.mperiod2" required></td>
+                            <br>
+
+                            <td> <label>Period3</label></td>
+                            <td><input type="text" class="form-control"  name="mperiod3" [(ngModel)]="timetableItem.mperiod3" required></td>
+                            <br>
+
+                            <td> <label>Period4</label></td>
+                            <td><input type="text" class="form-control"  name="mperiod4" [(ngModel)]="timetableItem.mperiod4" required></td>
+                            <br>
+                        </tr>
+
+                        <label for="">Tuesday:</label>
+                        <br>
+                        <tr class="form-group">
+
+                            <td> <label>Period1</label></td>
+                            <td><input type="text" class="form-control"  name="tuperiod1" [(ngModel)]="timetableItem.tuperiod1" required></td>
+                            <br>
+
+                            <td> <label>Period2</label></td>
+                            <td><input type="text" class="form-control"  name="tuperiod2" [(ngModel)]="timetableItem.tuperiod2"></td>
+                            <br>
+
+                            <td> <label>Period3</label></td>
+                            <td><input type="text" class="form-control"  name="tuperiod3" [(ngModel)]="timetableItem.tuperiod3"></td>
+                            <br>
+
+                            <td> <label>Period4</label></td>
+                            <td><input type="text" class="form-control"  name="tuperiod4" [(ngModel)]="timetableItem.tuperiod4" required></td>
+                            <br>
+                        </tr>
+
+                        <label for="">Wednesday:</label>
+                        <br>
+                        <tr class="form-group">
+
+                            <td> <label>Period1</label></td>
+                            <td><input type="text" class="form-control"  name="weperiod1" [(ngModel)]="timetableItem.weperiod1" ></td>
+                            <br>
+
+                            <td> <label>Period2</label></td>
+                            <td><input type="text"  class="form-control" name="weperiod2" [(ngModel)]="timetableItem.weperiod2"></td>
+                            <br>
+
+                            <td> <label>Period3</label></td>
+                            <td><input type="text" class="form-control"  name="weperiod3" [(ngModel)]="timetableItem.weperiod3"></td>
+                            <br>
+
+                            <td> <label>Period4</label></td>
+                            <td><input type="text" class="form-control"  name="weperiod4" [(ngModel)]="timetableItem.weperiod4"></td>
+                            <br>
+                        </tr>
+
+                        <label for="">Thursday:</label>
+                        <br>
+                        <tr class="form-group">
+
+                            <td> <label>Period1</label></td>
+                            <td><input type="text" class="form-control"  name="thperiod1" [(ngModel)]="timetableItem.thperiod1"></td>
+                            <br>
+
+                            <td> <label>Period2</label></td>
+                            <td><input type="text" class="form-control"  name="thperiod2" [(ngModel)]="timetableItem.thperiod2"></td>
+                            <br>
+
+                            <td> <label>Period3</label></td>
+                            <td><input type="text" class="form-control"  name="thperiod3" [(ngModel)]="timetableItem.thperiod3"></td>
+                            <br>
+
+                            <td> <label>Period4</label></td>
+                            <td><input type="text" class="form-control"  name="thperiod4" [(ngModel)]="timetableItem.thperiod4"></td>
+                            <br>
+                        </tr>
+
+                        <label for="">Friday:</label>
+                        <tr class="form-group">
+
+                            <td> <label>Period1</label></td>
+                            <td><input type="text" class="form-control"  name="frperiod1" [(ngModel)]="timetableItem.frperiod1"></td>
+                            <br>
+
+                            <td> <label>Period2</label></td>
+                            <td><input type="text" class="form-control"  name="frperiod2" [(ngModel)]="timetableItem.frperiod2"></td>
+                            <br>
+
+                            <td> <label>Period3</label></td>
+                            <td><input type="text"  class="form-control" name="frperiod3" [(ngModel)]="timetableItem.frperiod3"></td>
+                            <br>
+
+                            <td> <label>Period4</label></td>
+                            <td><input type="text"  class="form-control" name="frperiod4" [(ngModel)]="timetableItem.frperiod4" required></td>
+                            <br>
+                        </tr>
+                        
+                        <tr>
+                            <td></td>
+                            <td><button mat-raised-button color="primary" class="text-center" type="submit" >Add</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+    </mat-card>
+</div>
