@@ -29,7 +29,7 @@ export class AdmaddstdComponent implements OnInit {
   {
     this.admStudentService.newAddStudent(this.studentItem);
     console.log("Called");
-    alert("Are You Sure Want to Add This Student Details");
+    alert("Are You Sure Want to Add This Student Details?");
     this._router.navigate(['/admin/student']);
 
   }

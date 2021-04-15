@@ -1,6 +1,39 @@
 <div class="grid-container">
     <mat-card class="dashboard-card">
         <mat-toolbar color='basic'>Add New Faculty</mat-toolbar>
-        
+        <form fxLayoytAlign="stretch" fxLayout="column" class="form" #admaddfaculty="ngForm" (ngSubmit)="addFaculty()">
+            <div class="row">
+                <div class="col col-md-6">
+                    <div class="form-group">
+                        <label for="">Name</label><br>
+                        <input type="text" placeholder="Enter Faculty Name" name="name" class="form-control" id="inpbox" value="" [(ngModel)]="facultyItem.name" required>
+                    </div>
+                </div>
+                <div class="col col-lg-12">
+                    <div class="form-group">
+                        <label for="">Username</label><br>
+                        <input type="text" placeholder="Enter  Username" name="username" class="form-control" id="inpbox" value="" [(ngModel)]="facultyItem.username" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-md-5">
+                    <div class="form-group">
+                        <label for="">Email</label><br>
+                        <input type="email" placeholder="Enter Email" name="email" class="form-control" id="inpbox" value="" [(ngModel)]="facultyItem.email" required>
+                    </div>
+                </div>
+                <div class="col col-md-5">
+                    <div class="form-group">
+                        <label for="">Password</label><br>
+                        <input type="password" placeholder="Enter Password" name="password" class="form-control" id="inpbox" value="" [(ngModel)]="facultyItem.password" minlength="8" required>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <button mat-raised-button color="primary" type="submit" [disabled]="admaddfaculty.form.invalid">Add</button>
+        </form>
     </mat-card>
 </div>

@@ -8,10 +8,12 @@ import { HttpClient } from '@angular/common/http';
 export class AdmstudentService {
 
   constructor(private http:HttpClient) { }
+  // Get Student Details from DB
   getStudents()
   {
     return this.http.get("http://localhost:3000/admin/student/");
   }
+  // Creating New Student Details
   newAddStudent(item: any)
   {
     return this.http.post("http://localhost:3000/admin/addstudent/",{'student':item})

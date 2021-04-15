@@ -7,8 +7,15 @@ import { Injectable } from '@angular/core';
 export class FacultylistService {
 
   constructor(private http:HttpClient) { }
+  // Get Faculty From DB
   getFaculty()
   {
    return this.http.get('http://localhost:3000/admin/faculty');
+  }
+  // Create New Faculty  Details to DB
+  newAddFaculty(item:any)
+  {
+    return this.http.post("http://localhost:3000/admin/addfaculty/",{"faculty":item})
+    .subscribe(data=>{console.log(data)})
   }
 }
