@@ -8,11 +8,11 @@ export interface Timetable {
 }
 
 const ELEMENT_DATA: Timetable[] = [
-  {subject: "English", exam1: 100, exam2: 78},
-  {subject: "Hindi", exam1: 100, exam2: 88},
-  {subject: "Physics", exam1: 85, exam2: 69},
-  {subject: "Chemistry", exam1: 90, exam2: 84},
-  {subject: "Maths", exam1: 79, exam2: 80},
+  {subject: "ES", exam1: 100, exam2: 78},
+  {subject: "PIS", exam1: 100, exam2: 88},
+  {subject: "DMW", exam1: 85, exam2: 69},
+  {subject: "PE", exam1: 90, exam2: 84},
+  {subject: "project", exam1: 79, exam2: 80},
 
 ];
 

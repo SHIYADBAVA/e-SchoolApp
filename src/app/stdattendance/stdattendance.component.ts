@@ -7,11 +7,11 @@ export interface Timetable {
 }
 
 const ELEMENT_DATA: Timetable[] = [
-  {subject: "English", attendance: 100},
-  {subject: "Hindi", attendance: 100},
-  {subject: "Physics", attendance: 85},
-  {subject: "Chemistry", attendance: 90},
-  {subject: "Maths", attendance: 79},
+  {subject: "ES", attendance: 100},
+  {subject: "PIS", attendance: 93},
+  {subject: "DMW", attendance: 85},
+  {subject: "PE", attendance: 90},
+  {subject: "project", attendance: 100},
 
 ];
 @Component({
