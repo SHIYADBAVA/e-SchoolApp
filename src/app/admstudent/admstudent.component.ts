@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdmstudentService } from '../admstudent.service';
 import { StudentModel } from '../admstudent/admstudent.model';
 
@@ -19,6 +20,13 @@ export class AdmstudentComponent implements OnInit {
       this.students=JSON.parse(JSON.stringify(data));
     })
   }
+  // delete(id:any)
+  // {
+  //   this.admstudentService.delete(id);
+  //   console.log("delete function called");
+  //   alert("Are sure want to delete this student details?");
+  //   this._router.navigate(["/admin/student"]); 
+  // }
 
 }
 

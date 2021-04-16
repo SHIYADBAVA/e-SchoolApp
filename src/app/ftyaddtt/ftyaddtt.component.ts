@@ -21,8 +21,7 @@ export class FtyaddttComponent implements OnInit {
   {
     this.ftynewttService.newTimetable(this.timetableItem);
     console.log("Called");
-    alert("Success");
+    alert("Are you sure want to add this timetable?");
     this._router.navigate(['/faculty/timetable/']);
   }
-
 }
