@@ -9,7 +9,9 @@ const { mongo } = require('mongoose');
 var ObjectId = require('mongoose').Types.ObjectId;
 // Importing JSONWebToken
 const jwt = require('jsonwebtoken');
-// adminRouter.use(express.json());
+var bodyparser = require('body-parser');
+adminRouter.use(bodyparser.json());
+adminRouter.use(express.json());
 // adminRouter.use(urlencoded({extended:true}));
 
 
@@ -33,7 +35,6 @@ adminRouter.post('/',(req, res, next)=>{
             {
                 res.status(401).send("Invalid Username");
                 console.log('login failed username')
-
             }else
             if (username == AdminData.username && password == AdminData.password)
             {
@@ -41,7 +42,6 @@ adminRouter.post('/',(req, res, next)=>{
                 let token =jwt.sign(payload,'secretKey')
                 res.status(200).send({token})
                 console.log('login success');
-
             } else {
                 res.status(401).send('Invalid Credentials');
                 console.log('login failed by Invalid Credentials');
@@ -74,14 +74,18 @@ adminRouter.get('/addstudent',(req,res,next)=>{
     res.send("Load Add Student Form");
 });
 
-adminRouter.post('/addstudent',(req, res, next)=>{
-    var student =new Studentdata({
-        name:req.body.name,
-        classname:req.body.classname,
-        username:req.body.username,
-        email:req.body.email,
-        regno:req.body.regno,
-        password:req.body.password
+
+adminRouter.post('/addstudent',(req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS')
+    console.log(req.body);
+    var student = new Studentdata({
+        name:req.body.student.name,
+        classname:req.body.student.classname,
+        username:req.body.student.username,
+        email:req.body.student.email,
+        regno:req.body.student.regno,
+        password:req.body.student.password
     });
     student.save((err, doc)=>{
         if(!err)
@@ -93,6 +97,7 @@ adminRouter.post('/addstudent',(req, res, next)=>{
             console.log("Error in Student saving "+ JSON.stringify(err, undefined, 2));
         }
     });
+
 });
 
 // ************* Admin Single Student Details Routes ***************\\
@@ -180,12 +185,12 @@ adminRouter.get('/faculty',(req, res, next)=>{
 });
 // ************* Admin New Faculty Details Creating Routes ***************\\
 
-adminRouter.post('/faculty/addfaculty',(req, res, next)=>{
+adminRouter.post('/addfaculty',(req, res, next)=>{
     var fty =new Facultydata({
-        name:req.body.name,
-        username:req.body.username,
-        email:req.body.email,
-        password:req.body.password
+        name:req.body.faculty.name,
+        username:req.body.faculty.username,
+        email:req.body.faculty.email,
+        password:req.body.faculty.password
     });
     fty.save((err, doc)=>{
         if(!err)

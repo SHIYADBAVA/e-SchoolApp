@@ -18,28 +18,22 @@ facultyRouter.get('/',(req, res, next)=>{
 
 
 // Faculty Login Route
-Username='tests'
-Password='tests@123'
 facultyRouter.post('/',(req, res, next)=>{
         let FacultyData = req.body
+    Facultydata.findOne({username: FacultyData.username, password: FacultyData.password},(err, faculty)=>{
+        if(!faculty)
+        {
+            res.status(401).send("Invalid Username");
+            console.log('login failed username')
 
-            if(!Username)
-            {
-                res.status(401).send("Invalid Username");
-                console.log('login failed username')
-
-            }else
-            if (Username == FacultyData.username && Password == FacultyData.password)
-            {
-                let payload ={subject:username+password}
-                let token =jwt.sign(payload,'secretKey')
-                res.status(200).send({token})
-                console.log('login success');
-
-            } else {
-                res.status(401).send('Invalid Credentials');
-                console.log('login failed by Invalid Credentials');
-            }
+        }else
+        {
+            let payload ={subject:username+password}
+            let token =jwt.sign(payload,'secretKey')
+            res.status(200).send({token})
+            console.log('login success');
+        }
+    })
 });
 
 // ############## / / / / ***************** / / / / / /################\\
@@ -154,40 +148,44 @@ facultyRouter.delete("/student/:id",(req, res)=>{
 
 // ************* faculty Creating New Timetable Routes ***************\\
 
-facultyRouter.post('/timetable/addtimetable',(req, res, next)=>{
-    var tt =new Timetabledata({
-        classname:req.body.classname,
-        mperiod1:req.body.mperiod1,
-        mperiod2:req.body.mperiod2,
-        mperiod3:req.body.mperiod3,
-        mperiod4:req.body.mperiod4,
-        tuperiod1:req.body.tuperiod1,
-        tuperiod2:req.body.tuperiod2,
-        tuperiod3:req.body.tuperiod3,
-        tuperiod4:req.body.tuperiod4,
-        weperiod1:req.body.weperiod1,
-        weperiod2:req.body.weperiod2,
-        weperiod3:req.body.weperiod3,
-        weperiod4:req.body.weperiod4,
-        thperiod1:req.body.thperiod1,
-        thperiod2:req.body.thperiod2,
-        thperiod3:req.body.thperiod3,
-        thperiod4:req.body.thperiod4,
-        frperiod1:req.body.frperiod1,
-        frperiod2:req.body.frperiod2,
-        frperiod3:req.body.frperiod3,
-        frperiod4:req.body.frperiod4,
+facultyRouter.post('/addtimetable', (req, res, next)=>{
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS')
+    console.log(req.body);
+    var timetable = new Timetabledata({
+        classname:req.body.timetable.classname,
+        mperiod1:req.body.timetable.mperiod1,
+        mperiod2:req.body.timetable.mperiod2,
+        mperiod3:req.body.timetable.mperiod3,
+        mperiod4:req.body.timetable.mperiod4,
+        tuperiod1:req.body.timetable.tuperiod1,
+        tuperiod2:req.body.timetable.tuperiod2,
+        tuperiod3:req.body.timetable.tuperiod3,
+        tuperiod4:req.body.timetable.tuperiod4,
+        weperiod1:req.body.timetable.weperiod1,
+        weperiod2:req.body.timetable.weperiod2,
+        weperiod3:req.body.timetable.weperiod3,
+        weperiod4:req.body.timetable.weperiod4,
+        thperiod1:req.body.timetable.thperiod1,
+        thperiod2:req.body.timetable.thperiod2,
+        thperiod3:req.body.timetable.thperiod3,
+        thperiod4:req.body.timetable.thperiod4,
+        frperiod1:req.body.timetable.frperiod1,
+        frperiod2:req.body.timetable.frperiod2,
+        frperiod3:req.body.timetable.frperiod3,
+        frperiod4:req.body.timetable.frperiod4,
     });
-    tt.save((err, doc)=>{
+    timetable.save((err, doc)=>{
         if(!err)
         {
             console.log(doc);
         }
         else
         {
-            console.log("Error in Timetable saving "+ JSON.stringify(err, undefined, 2));
+            console.log("Error in timetable saving "+ JSON.stringify(err, undefined, 2));
         }
     });
+
 });
 
 // ************* faculty Timetable List loading ***************\\
