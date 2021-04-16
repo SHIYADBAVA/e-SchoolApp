@@ -10,11 +10,11 @@ export interface Timetable {
 }
 
 const ELEMENT_DATA: Timetable[] = [
-  {day: "Monday", period1: 'Maths', period2: 'Hindi', period3: 'Chemistry', period4:"English"},
-  {day: "Tuesday", period1: 'Chemistry', period2: 'English', period3: 'Physics', period4:"Maths"},
-  {day: "Wednesday", period1: 'Physics', period2: 'Physics', period3: 'English', period4:"Hindi"},
-  {day: "Thursday", period1: 'English', period2: 'Maths', period3: 'Chemistry', period4:"Physics"},
-  {day: "Friday", period1: 'Physics', period2: 'Chemistry', period3: 'Hindi', period4:"English"},
+  {day: "Monday", period1: 'ES', period2: 'PIS', period3: 'PE', period4:"DMW"},
+  {day: "Tuesday", period1: 'DMW', period2: 'ES', period3: 'PIS', period4:"PE"},
+  {day: "Wednesday", period1: 'PE', period2: 'DMW', period3: 'ES', period4:"PIS"},
+  {day: "Thursday", period1: 'PIS', period2: 'PE', period3: 'DMW', period4:"ES"},
+  {day: "Friday", period1: 'project', period2: 'project', period3: 'project', period4:"project"},
 ];
 @Component({
   selector: 'app-timetable',
